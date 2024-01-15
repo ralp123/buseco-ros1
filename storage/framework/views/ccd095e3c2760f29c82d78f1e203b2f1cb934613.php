@@ -1,0 +1,1 @@
+<h1>Submitted Successfully!</h1><?php /**PATH D:\xampp\htdocs\application-app\resources\views/applicationForm/create.blade.php ENDPATH**/ ?>
