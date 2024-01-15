@@ -23,9 +23,26 @@ class Application extends Model
         'Municipality',
         'Barangay',
         'Citizenship',
+        'CivilStatus',
         'Sex',
-        'Ownership',
-        'TellNo'
+        //'Ownership',
+        'TelNo',
+
+        'Sitio',
+        // 'email',
+        'birthdateSpouse',
+        'fam1',
+        'fam2',
+        'fam3',
+        'fam4',
+
+        'ctcissuedon',
+        'ctcno',
+
+        'street',
+        'houseno',
+
+        'requirement1'
     ];
     
     protected $table = 'application';

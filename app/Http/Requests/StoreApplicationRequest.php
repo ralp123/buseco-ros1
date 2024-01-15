@@ -29,17 +29,30 @@ class StoreApplicationRequest extends FormRequest
             'fname' => ['bail', 'required', 'max:50'],
             'mname' => ['nullable'],
             'lname' => ['bail', 'required', 'max:50'],
-            'spousename' => ['bail', 'required', 'max:50'],
+
+            'ctcissuedate' => ['bail', 'required'],
+            'ctcno' =>  ['bail', 'required', 'alpha_num:ascii'],
+
             'address' => ['bail', 'required', 'max:50'],
             'birthdate' => ['bail', 'required'],
             'membertype' => ['bail', 'required', 'max:20'],
-            
+
+            'houseno' => ['nullable'],
+            'sitio' => ['bail', 'required'],
             'municipality' => ['bail', 'required', 'max:20'],
             'barangay' => ['bail', 'required', 'max:20'],
             'citizenship' => ['bail', 'required', 'max:20'],
+            'civilstatus' => ['bail', 'required', 'max:20'],
             'gender' => ['bail', 'required', 'max:20'],
-            'ownership' => ['bail', 'required', 'max:20'],
+            //'ownership' => ['bail', 'required', 'max:20'],
             'tellno' => ['bail', 'required', 'max:20'],
+            'spousename' => ['bail', 'required', 'max:50'],
+            'spousebirthdate' => ['bail', 'required'],
+
+            'children1' => ['nullable', 'alpha:ascii'],
+            'children2' => ['nullable', 'alpha:ascii'],
+            'children3' => ['nullable', 'alpha:ascii'],
+            'children4' => ['nullable', 'alpha:ascii'],
         ];
     }
 
@@ -58,12 +71,27 @@ class StoreApplicationRequest extends FormRequest
             'BirthDate' => $this->birthdate,
             'MemberType' => $this->membertype,
 
+            'houseno' => $this->houseno,
+            'Sitio' => $this->sitio,
             'Municipality' => $this->municipality,
             'Barangay' => $this->barangay,
             'Citizenship' => $this->citizenship,
+            'CivilStatus' => $this->civilstatus,
             'Sex' => $this->gender,
             'Ownership' => $this->ownership,
-            'TellNo' => $this->tellno,
+            'TelNo' => $this->tellno,
+            'birthdateSpouse' => $this->spousebirthdate,
+
+            'ctcissuedon' => $this->ctcissuedate,
+            'ctcno' => $this->ctcno,
+
+
+            'fam1' => $this->children1,
+            'fam2' => $this->children2,
+            'fam3' => $this->children3,
+            'fam4' => $this->children4,
+
+            'requirement1' => 'req'
         ]);
     }
 }

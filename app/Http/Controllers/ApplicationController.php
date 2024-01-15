@@ -5,21 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Application;
 use App\Models\Barangay;
+use App\Models\Sitio;
 Use App\Http\Requests\StoreApplicationRequest;
 
 class ApplicationController extends Controller
 {
     public function index(){
         $municipality = Barangay::select('Area')
-        ->where('Area', '!=', '-')
         ->groupByRaw('Area')
         ->get();
 
         $barangay = Barangay::select('Barangay')
-        ->where('Area', '!=', '-')
         ->get();
 
-        return view('applicationForm.index', ['municipalities' => $municipality, 'barangays' => $barangay]);
+        $sitio = Sitio::select('Area', 'Barangay', 'SITIO')
+        ->get();
+
+        return view('applicationForm.index', ['municipalities' => $municipality, 'barangays' => $barangay, 'sitio' => $sitio]);
     }
 
     public function store(StoreApplicationRequest $request)
