@@ -6,6 +6,7 @@ Install requirements:
 3. *php artisan breeze:install* then choose blade or click *0* via cmd.
 4. *php artisan migrate* via cmd.
 5. *npm install* via cmd
+6. *npm run dev* via cmd
 
 Run the app:
 1. *php artisan serve*
